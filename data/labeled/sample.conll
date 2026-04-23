@@ -1,0 +1,520 @@
+አበበ B-PER
+በቀለ I-PER
+አዲስ B-LOC
+አበባ I-LOC
+ውስጥ O
+ይኖራል O
+። O
+
+ከበደ B-PER
+በኢትዮጵያ B-LOC
+ንግድ O
+ባንክ B-ORG
+ሠራ O
+። O
+
+ሰላም O
+ለሁላችሁ O
+። O
+
+አልማዝ B-PER
+በጎንደር B-LOC
+ዩኒቨርሲቲ B-ORG
+ተማረች O
+። O
+
+ፋኖስ B-PER
+ከአዲስ B-LOC
+አበባ I-LOC
+ወደ O
+ባሕር B-LOC
+ዳር I-LOC
+ተጓዘ O
+። O
+
+የኢትዮጵያ B-ORG
+አየር I-ORG
+መንገድ I-ORG
+ትልቁ O
+አየር O
+መንገድ O
+ነው O
+። O
+
+ሄለን B-PER
+በሀዋሳ B-LOC
+ትኖራለች O
+። O
+
+ታደሰ B-PER
+በዝዋይ B-LOC
+ትምህርት O
+ቤት O
+ያስተምራል O
+። O
+
+በዓለም O
+ባንክ B-ORG
+ሪፖርት O
+ኢትዮጵያ B-LOC
+ታድጋለች O
+። O
+
+መርዓዊ B-PER
+ለመቐለ B-LOC
+ዩኒቨርሲቲ B-ORG
+ምርምር O
+አቀረበ O
+። O
+
+ብርሃኑ B-PER
+ዋልድባ I-PER
+በአዲስ B-LOC
+አበባ I-LOC
+ዩኒቨርሲቲ B-ORG
+ያስተምራል O
+። O
+
+ሳራ B-PER
+ከጅማ B-LOC
+ወደ O
+አዲስ B-LOC
+አበባ I-LOC
+መጣች O
+። O
+
+ዳዊት B-PER
+በደሴ B-LOC
+ገበያ O
+ላይ O
+ሸቀጣ O
+። O
+
+ፍቅርተ B-PER
+ለኢትዮጵያ B-LOC
+ቀይ O
+መስቀል B-ORG
+ተወካይ O
+ሆነች O
+። O
+
+ተስፋዬ B-PER
+በባሕር B-LOC
+ዳር I-LOC
+ዩኒቨርሲቲ B-ORG
+ምርምር O
+አደረገ O
+። O
+
+ሙሉ B-PER
+ሌንጮ I-PER
+ወደ O
+ሐረር B-LOC
+ተጓዘ O
+። O
+
+አስተር B-PER
+ከናዝሬት B-LOC
+ወደ O
+ሐዋሳ B-LOC
+ሄደች O
+። O
+
+ግርማ B-PER
+ለኢትዮጵያ B-ORG
+ቴሌኮም I-ORG
+ሠራ O
+። O
+
+ማርያም B-PER
+ገብረ I-PER
+ለአዲስ B-LOC
+አበባ I-LOC
+ትምህርት O
+ቢሮ B-ORG
+ሠራች O
+። O
+
+ሰለሞን B-PER
+በደብረ B-LOC
+ብርሃን I-LOC
+ይኖራል O
+። O
+
+ብርሃነ B-PER
+መስቀል I-PER
+ለዓለም O
+ባንክ B-ORG
+ሠራ O
+። O
+
+ፀሐይ B-PER
+በድሬዳዋ B-LOC
+ስህተት O
+ሠራች O
+። O
+
+ዮሐንስ B-PER
+ከአክሱም B-LOC
+ወደ O
+ላሊበላ B-LOC
+ተጓዘ O
+። O
+
+ትግስት B-PER
+በሐረር B-LOC
+ዩኒቨርሲቲ B-ORG
+ተማረች O
+። O
+
+ፋሲል B-PER
+ከጅማ B-LOC
+ከተማ O
+ነው O
+። O
+
+ዓለም O
+ባንክ B-ORG
+ኢትዮጵያን B-LOC
+ረዳ O
+። O
+
+ይርጋለም B-PER
+ወደ O
+ጎንደር B-LOC
+ሄደ O
+። O
+
+ሰናይት B-PER
+ለተባበሩት O
+መንግሥታት B-ORG
+ድርጅት I-ORG
+ሠራች O
+። O
+
+ንግሥት B-PER
+ጣይቱ I-PER
+አዲስ B-LOC
+አበባን I-LOC
+መሰረተች O
+። O
+
+ዳግማዊ B-PER
+ምኒልክ I-PER
+ኢትዮጵያን B-LOC
+አንድ O
+አደረገ O
+። O
+
+አቶ O
+ለማ B-PER
+መገርሳ I-PER
+በኦሮሚያ B-LOC
+ክልል O
+ተወለደ O
+። O
+
+ወይዘሮ O
+መዓዛ B-PER
+አሸናፊ I-PER
+ለኢትዮጵያ B-ORG
+አየር I-ORG
+መንገድ I-ORG
+ሠራች O
+። O
+
+ቢሾፍቱ B-LOC
+ከአዲስ B-LOC
+አበባ I-LOC
+ቅርብ O
+ነው O
+። O
+
+መቐለ B-LOC
+የትግራይ B-LOC
+ክልል O
+ዋና O
+ከተማ O
+ናት O
+። O
+
+ጋምቤላ B-LOC
+በምዕራብ O
+ኢትዮጵያ B-LOC
+ትገኛለች O
+። O
+
+ኃይለ B-PER
+ሥላሴ I-PER
+ለኢትዮጵያ B-LOC
+ብዙ O
+ሠራ O
+። O
+
+ጀግናው O
+አበበ B-PER
+ቢቂላ I-PER
+በኦሎምፒክ B-ORG
+ሩጫ O
+አሸነፈ O
+። O
+
+ደራሲ O
+ሐዲስ B-PER
+ዓለማየሁ I-PER
+ፍቅር O
+እስከ O
+መቃብር O
+ጻፈ O
+። O
+
+ፕሮፌሰር O
+ኪዳኔ B-PER
+ማርያም I-PER
+በአዲስ B-LOC
+አበባ I-LOC
+ዩኒቨርሲቲ B-ORG
+ያስተምራል O
+። O
+
+ዶክተር O
+ቴድሮስ B-PER
+አድሃኖም I-PER
+የዓለም O
+ጤና O
+ድርጅት B-ORG
+ኃላፊ O
+ነው O
+። O
+
+ማሞ B-PER
+ወልዴ I-PER
+ለኢትዮጵያ B-LOC
+ክብር O
+ሮጠ O
+። O
+
+ድሬዳዋ B-LOC
+በምስራቅ O
+ኢትዮጵያ B-LOC
+ትገኛለች O
+። O
+
+ደብረ B-LOC
+ዘይት I-LOC
+ከአዲስ B-LOC
+አበባ I-LOC
+ደቡብ O
+ነው O
+። O
+
+ሃናን B-PER
+የኢትዮጵያ B-ORG
+ቀይ I-ORG
+መስቀል I-ORG
+ተወካይ O
+ናት O
+። O
+
+ዘላለም B-PER
+ከአርባ B-LOC
+ምንጭ I-LOC
+ወደ O
+አዲስ B-LOC
+አበባ I-LOC
+ተጓዘ O
+። O
+
+ፓውሎስ B-PER
+ጥንቁሽ O
+ይለበሳል O
+። O
+
+ዓፄ B-PER
+ዮሐንስ I-PER
+ከመቐለ B-LOC
+ነበር O
+። O
+
+ይሁዳ B-PER
+ወደ O
+ጅማ B-LOC
+ሄደ O
+። O
+
+ሮማን B-PER
+በሶዶ B-LOC
+ትኖራለች O
+። O
+
+ኩራባቸው B-PER
+ለኢትዮጵያ B-ORG
+ብሔራዊ I-ORG
+ቡድን I-ORG
+ተጫወተ O
+። O
+
+ማህሌት B-PER
+በወሎ B-LOC
+ተወለደች O
+። O
+
+የተመድ B-ORG
+ጽህፈት O
+ቤት O
+ሪፖርት O
+አወጣ O
+። O
+
+ቱሉ B-PER
+ዲመቱ I-PER
+ለኢትዮጵያ B-LOC
+ድል O
+ሮጠ O
+። O
+
+ምስራቅ O
+ኢትዮጵያ B-LOC
+ደረቅ O
+ነው O
+። O
+
+ብሩክ B-PER
+በአዋሳ B-LOC
+ሆቴል O
+ሠራ O
+። O
+
+ገድሉ B-PER
+ለኢትዮጵያ B-ORG
+ንግድ I-ORG
+ባንክ I-ORG
+ሠራ O
+። O
+
+ሥዩም B-PER
+በወልዲያ B-LOC
+ትምህርት O
+ቤት O
+ያስተምራል O
+። O
+
+ከፍያለው B-PER
+ከነቀምት B-LOC
+ወደ O
+ጂንካ B-LOC
+ሄደ O
+። O
+
+ቤዛ B-PER
+ለአፍሪካ B-ORG
+ኅብረት I-ORG
+ሠራች O
+። O
+
+ክልቱ B-PER
+በሰመራ B-LOC
+ይኖራል O
+። O
+
+ፍሬሕይወት B-PER
+በሐዋሳ B-LOC
+ዩኒቨርሲቲ B-ORG
+ተመረቀች O
+። O
+
+ዋልተር B-PER
+ከአዲስ B-LOC
+አበባ I-LOC
+ነው O
+። O
+
+ሕሊና B-PER
+ለዩኒሴፍ B-ORG
+ሠራች O
+። O
+
+ተሾመ B-PER
+ጥቁር O
+ባቡር O
+ከድሬዳዋ B-LOC
+ወደ O
+አዲስ B-LOC
+አበባ I-LOC
+ተሳፈረ O
+። O
+
+ዘሪሁን B-PER
+በአዲስ B-LOC
+አበባ I-LOC
+ሼራተን B-ORG
+ሆቴል I-ORG
+ሠራ O
+። O
+
+ሀብታም B-PER
+በሱሉልታ B-LOC
+ሩጫ O
+ልምምድ O
+አደረገ O
+። O
+
+ኢትዮጵያ B-LOC
+የቡና O
+መገኛ O
+ናት O
+። O
+
+ውቡ B-PER
+ከወላይታ B-LOC
+ስዲ I-LOC
+ከተማ O
+ነው O
+። O
+
+ሙላት B-PER
+ለኢትዮጵያ B-ORG
+ብሮድካስቲንግ I-ORG
+ሠራ O
+። O
+
+ዩኒቨርሲቲው B-ORG
+አዲስ O
+ህንፃ O
+ገነባ O
+። O
+
+ገነት B-PER
+በአዲስ B-LOC
+አበባ I-LOC
+ሸገር O
+ፓርክ O
+ጎበኘች O
+። O
+
+ንጉሥ B-PER
+ሣህለ I-PER
+ሥላሴ I-PER
+ሸዋን B-LOC
+ገዛ O
+። O
+
+ባለቤቱ O
+ወደ O
+ሐረር B-LOC
+ተጓዘ O
+። O
+
+ማረሚያ O
+ቤት O
+በአዲስ B-LOC
+አበባ I-LOC
+ይገኛል O
+። O
+
+ሚካኤል B-PER
+ለመንግሥት B-ORG
+ኮሙኒኬሽን I-ORG
+ሠራ O
+። O
+
