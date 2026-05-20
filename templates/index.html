@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amharic NER System</title>
+    <meta name="description" content="Named Entity Recognition for Amharic language using XLM-RoBERTa and semi-supervised learning">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #00d2ff, #7b2ff7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.3rem;
+        }
+
+        .subtitle {
+            color: #9a9aaf;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 640px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #c5c5d8;
+            font-size: 0.9rem;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            padding: 0.9rem 1rem;
+            color: #f0f0f0;
+            font-size: 1.05rem;
+            font-family: inherit;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #7b2ff7;
+            box-shadow: 0 0 0 3px rgba(123, 47, 247, 0.2);
+        }
+
+        textarea::placeholder {
+            color: #6a6a80;
+        }
+
+        button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            margin-top: 1.2rem;
+            padding: 0.85rem;
+            background: linear-gradient(135deg, #7b2ff7, #00d2ff);
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.15s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* ── Results ─────────────────────────────── */
+        #results {
+            margin-top: 1.5rem;
+            display: none;
+        }
+
+        #results.visible {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .results-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #c5c5d8;
+            margin-bottom: 0.7rem;
+        }
+
+        .entity-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .entity-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.45rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            border: 1px solid transparent;
+        }
+
+        .entity-chip .label-tag {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.15rem 0.45rem;
+            border-radius: 6px;
+        }
+
+        /* Color-coded by entity type */
+        .entity-chip.PER  { background: rgba(255, 107, 107, 0.15); border-color: rgba(255, 107, 107, 0.3); color: #ff6b6b; }
+        .entity-chip.PER  .label-tag { background: rgba(255, 107, 107, 0.25); color: #ff6b6b; }
+
+        .entity-chip.LOC  { background: rgba(81, 207, 102, 0.15); border-color: rgba(81, 207, 102, 0.3); color: #51cf66; }
+        .entity-chip.LOC  .label-tag { background: rgba(81, 207, 102, 0.25); color: #51cf66; }
+
+        .entity-chip.ORG  { background: rgba(74, 144, 226, 0.15); border-color: rgba(74, 144, 226, 0.3); color: #4a90e2; }
+        .entity-chip.ORG  .label-tag { background: rgba(74, 144, 226, 0.25); color: #4a90e2; }
+
+        .no-entities {
+            color: #6a6a80;
+            font-style: italic;
+        }
+
+        /* ── Spinner ─────────────────────────────── */
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.78rem;
+            color: #5a5a70;
+        }
+    </style>
+</head>
+<body>
+    <h1>🇪🇹 Amharic NER</h1>
+    <p class="subtitle">Named Entity Recognition powered by XLM-RoBERTa</p>
+
+    <div class="card">
+        <form id="nerForm">
+            <label for="textInput">Enter Amharic text</label>
+            <textarea
+                id="textInput"
+                name="text" 
+                placeholder="ለምሳሌ: አበበ አዲስ አበባ ኖረ"
+                required
+            ></textarea>
+            <button type="submit" id="submitBtn">
+                <span id="btnText">Detect Entities</span>
+            </button>
+        </form>
+
+        <div id="results">
+            <p class="results-title">Detected Entities</p>
+            <div id="entityList" class="entity-list"></div>
+        </div>
+    </div>
+
+    <p class="footer">Amharic NER System · Semi-supervised · XLM-RoBERTa</p>
+
+    <script>
+        const form   = document.getElementById('nerForm');
+        const btn    = document.getElementById('submitBtn');
+        const btnTxt = document.getElementById('btnText');
+        const resSec = document.getElementById('results');
+        const entList= document.getElementById('entityList');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const text = document.getElementById('textInput').value.trim();
+            if (!text) return;
+
+            // Show loading state
+            btn.disabled = true;
+            btnTxt.innerHTML = '<div class="spinner"></div> Analyzing…';
+
+            try {
+                const formData = new FormData();
+                formData.append('text', text);
+
+                const response = await fetch('/predict', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                const data = await response.json();
+                displayResults(data.entities);
+            } catch (err) {
+                entList.innerHTML = '<p class="no-entities">Error: could not reach the server.</p>';
+                resSec.classList.add('visible');
+            } finally {
+                btn.disabled = false;
+                btnTxt.textContent = 'Detect Entities';
+            }
+        });
+
+        function displayResults(entities) {
+            entList.innerHTML = '';
+
+            if (!entities || entities.length === 0) {
+                entList.innerHTML = '<p class="no-entities">No entities detected.</p>';
+            } else {
+                entities.forEach(ent => {
+                    const chip = document.createElement('span');
+                    chip.className = `entity-chip ${ent.label}`;
+                    chip.innerHTML = `
+                        ${ent.entity}
+                        <span class="label-tag">${ent.label}</span>
+                    `;
+                    entList.appendChild(chip);
+                });
+            }
+
+            resSec.classList.add('visible');
+        }
+    </script>
+</body>
+</html>
