@@ -1,0 +1,14 @@
+# Install PyTorch first (see below), then install these:
+torch 
+torchvision
+torchaudio
+transformers
+seqeval
+fastapi
+uvicorn
+numpy
+pandas
+jinja2
+python-multipart
+sentencepiece
+protobuf
